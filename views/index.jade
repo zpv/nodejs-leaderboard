@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	// Wrapper
+	#wrapper
+		// USER LIST
+		h2 Leaderboard
+		#userList
+			table
+				thead
+					th Rank
+					th Name
+					th Money
+				tbody
+		// /USER LIST
+
+		#buttons
+			a(href="http://google.com" class="button" id="back") Back
+			a(href="http://google.com" class="button" id="next") Next
+			
+
+		form(id="search")
+			input(type="text" name="steamid" placeholder="Search SteamID")
+			button(type="submit" value="Submit") Search
+	// /Wrapper
+
