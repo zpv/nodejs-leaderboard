@@ -1,6 +1,7 @@
 body {
-  padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  color: rgb(191, 191, 191);
 }
 
 h2 {
@@ -18,9 +19,44 @@ a.button {
 
     text-decoration: none;
     color: initial;
-    padding: 2px;
+    padding: 3px 7px 3px 7px;
     margin-left: 5px;
     margin-bottom: 10px;
+}
+
+#logo {
+	text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    height:150px;
+}
+
+#backgroundGradient {
+	position: fixed;
+	z-index: -1;
+	-webkit-transform: translateZ(0);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 0%;
+	width: 100%;
+	height:	100%;
+
+	background: url("/images/bg-prefaded.png");
+    background: -webkit-linear-gradient(to top left, #c46459 0%, #12263d 100%);
+    background: -o-linear-gradient(to top left, #c46459 0%, #12263d 100%); 
+    background: -moz-linear-gradient(to top left, #c46459 0%, #12263d 100%); 
+    background: linear-gradient(to top left, #c46459 0%, #12263d 100%);
+}
+
+#imageOverlay {
+	background-image: url("/images/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 0%;
+	opacity: 0.1;
+	width: 100%;
+	height: 100%;
 }
 
 #wrapper {
@@ -36,13 +72,19 @@ a.button {
 }
 	#userList table {
 		border-collapse:separate;
-		border-spacing:1px;
-		background:#CCC;
+		border-spacing:0px;
+		background: rgba(10,10,10,0.8);
+		    border: 1px solid rgba(0,0,0,0.7);
+		    box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+	}
+
+	#userList table thead {
+		    background-color: rgba(0,0,0,0.2);
 	}
 		#userList table th {
-			background:#EEE;
 			font-weight:600;
 			padding:10px 20px;
+			color: rgb(237, 237, 237);
 			text-align:center;
 		}
 		#userList table tbody {
@@ -51,8 +93,10 @@ a.button {
 			border-spacing:0px;
 		}
 			#userList table td {
-				background:#FFF;
-				padding:5px 10px;
+				border-top: 1px solid rgba(255,255,255,0.08);
+				border-bottom: 1px solid rgba(0,0,0,0.5);
+				background:none;
+				padding:8px 30px;
 				text-align:center;
 			}
 

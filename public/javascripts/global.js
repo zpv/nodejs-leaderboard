@@ -49,14 +49,15 @@ function populateTable() {
     var steamid = getParameterByName('steamid');
 
     if(0 !== steamid.length){
-        $('#back').attr("href", "/");
+        $('#back').prop("href", "/");
+        $('#back').text("Return");
         $('#next').remove();
     } else if( 1 == page || 0 == page || 0 === page.length) {
         $('#back').remove();
-        $('#next').attr("href", "/?page=2");
+        $('#next').prop ("href", "/?page=2");
     } else {
-        $('#back').attr("href", "/?page=" + (parseInt(page) - 1));
-        $('#next').attr("href", "/?page=" + (parseInt(page) + 1));
+        $('#back').prop("href", "/?page=" + (parseInt(page) - 1));
+        $('#next').prop("href", "/?page=" + (parseInt(page) + 1));
     }
 
     $.getJSON('/users/userlist?p=' + (page || 1) +'&s=' + (steamid), insertData);
