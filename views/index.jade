@@ -6,7 +6,8 @@ block content
 		#imageOverlay
 
 	// Wrapper
-	img(id="logo" src="/images/logo.png")
+	a(href="https://forums.auroraen.com")
+		img(id="logo" src="/images/logo.png")
 	#wrapper
 
 		// USER LIST
@@ -24,9 +25,10 @@ block content
 			a(href="http://google.com" class="button" id="back") Back
 			a(href="http://google.com" class="button" id="next") Next
 			
-
-		form(id="search")
-			input(type="text" name="steamid" placeholder="Search SteamID")
-			button(type="submit" value="Submit") Search
+		#searchWrapper
+			form(id="search")
+				input(type="text" id="searchBox" name="steamid" placeholder="SteamID...")
+				button(type="submit" value="Submit" id ="searchBtn")
+					<i class="fa fa-search"></i>
 	// /Wrapper
 

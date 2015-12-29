@@ -35,9 +35,13 @@ router.get('/userlist', function(req, res) {
 				    return arrayItem.uid;
 				}).indexOf(uniqueid);
 
-				arr.query[arrayPosition].bold = true;
+				if(typeof arr.query[arrayPosition] === 'undefined') {
+					var sliced = arr.query.slice((1 * 30) - 30, 1 * 30);
+				} else {
 
-				var sliced = arr.query.slice(arrayPosition - 14, arrayPosition + 14);
+					arr.query[arrayPosition].bold = true;
+					var sliced = arr.query.slice(arrayPosition - 14, arrayPosition + 14);
+				}
 			}
 			else {
 				var sliced = arr.query.slice((page * 30) - 30, page * 30);

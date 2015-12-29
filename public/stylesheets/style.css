@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Roboto Condensed", Helvetica, Tahoma, Arial, sans-serif;
   margin: 0px;
   color: rgb(191, 191, 191);
 }
@@ -64,6 +64,44 @@ a.button {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%);
+	margin-bottom: 10px;
+}
+
+#searchWrapper {
+	margin:auto;
+	background: rgba(0,0,0,0.4);
+	position: relative;
+	width: 200px;
+	border-radius: 17px;
+	height: 34px;
+	text-align: left;
+    box-shadow: inset rgba(0,0,0,0.23) 0px 1px 5px, rgba(255,255,255,0.1) 0px 1px 0px, rgba(255,255,255,0.1) 0px 0px 0px 1px;
+}
+
+#searchBox{
+	font-family: "Roboto Condensed", Helvetica, Tahoma, Arial, sans-serif;
+	border: 0;
+	border-radius: 17px;
+	line-height: 34px;
+	padding: 0px 0px 0px 17px;
+	background: transparent;
+	box-shadow: none;
+	height: 34px;
+	text-align: left;
+	color: #d6d7db;
+}
+
+#searchBtn{
+	position: absolute;
+	border: 0;
+	background: transparent;
+	font-size: 17px;
+	width: 35px;
+	top: 5px;
+	right: 5px;
+	-webkit-appearance: button;
+	cursor: pointer;
+	color: rgb(185, 185, 185);
 }
 
 #userList {
