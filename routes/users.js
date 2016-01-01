@@ -28,7 +28,7 @@ router.get('/userlist', function(req, res) {
 			}
 
 			if(search) {
-				var uniqueid = crc.crc32("gm_" + search +"_gm");
+				var uniqueid = crc.crc32("gm_" + search.toUpperCase() +"_gm");
 				console.log(uniqueid);
 
 				var arrayPosition = arr.query.map(function(arrayItem) {
