@@ -1,10 +1,13 @@
 var express = require('express');
 var crc = require('crc');
+var steam = require('steamidconvert')();
 var router = express.Router();
 
 /*
  * GET userlist.
  */
+
+
 router.get('/userlist', function(req, res) {
 	var s2j = req.s2j;
 
@@ -12,7 +15,7 @@ router.get('/userlist', function(req, res) {
 	var search = req.query.s;
 
 
-	s2j.addQuery('query', 'SELECT uid, rpname, wallet, salary FROM darkrp_player');
+	s2j.addQuery('query', 'SELECT uid, rpname, wallet, salary FROM darkrp_player WHERE uid > 100000000000 ORDER BY wallet DESC');
 
 	s2j.run(function(err, json) {
 		if (err) {
@@ -20,16 +23,17 @@ router.get('/userlist', function(req, res) {
 		} else {
 			//console.log('Here is your JSON: %s', json);
 			var arr = JSON.parse(json);
-			arr.query.sort(function(a, b) {
-				return b.wallet - a.wallet
-			});
+			//arr.query.sort(function(a, b) {
+			//	return b.wallet - a.wallet
+			//});
 			for (var i in arr.query) {
+				//console.log(arr.query[i].uid + " " + arr.query[i].rpname)
 				arr.query[i].rank = parseInt(i) + 1;
 			}
 
 			if(search) {
-				var uniqueid = crc.crc32("gm_" + search.toUpperCase() +"_gm");
-				console.log(uniqueid);
+				var uniqueid = steam.convertTo64(search);
+				//console.log(uniqueid);
 
 				var arrayPosition = arr.query.map(function(arrayItem) {
 				    return arrayItem.uid;

@@ -12,7 +12,7 @@ var crc = require('crc');
 
 // https://www.npmjs.com/package/sqlite2json
 var sqltojson = require('sqlite2json');
-var s2j = new sqltojson('sv.db');
+var s2j = new sqltojson('/darkrp/garrysmod/sv.db');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
