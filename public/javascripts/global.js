@@ -21,6 +21,10 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function insertData(data) {
     var tableContent = '';
     userListData = data;
@@ -34,7 +38,7 @@ function insertData(data) {
             tableContent += '<td>' + this.rpname + '</a></td>';
         }
         
-        tableContent += '<td>$' + Math.floor(this.wallet) + '</td>';
+        tableContent += '<td>$' + numberWithCommas(Math.floor(this.wallet)) + '</td>';
         tableContent += '</tr>';
     });
 

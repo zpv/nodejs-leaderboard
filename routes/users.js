@@ -35,12 +35,15 @@ router.get('/userlist', function(req, res) {
 				var uniqueid = steam.convertTo64(search);
 				//console.log(uniqueid);
 
+				//console.log(typeof uniqueid);
+
 				var arrayPosition = arr.query.map(function(arrayItem) {
 				    return arrayItem.uid;
-				}).indexOf(uniqueid);
+				}).indexOf(parseInt(uniqueid));
 
 				if(typeof arr.query[arrayPosition] === 'undefined') {
 					var sliced = arr.query.slice((1 * 30) - 30, 1 * 30);
+					console.log("ono")
 				} else {
 
 					arr.query[arrayPosition].bold = true;
